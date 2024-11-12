@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur - Woody</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Section Bannière et Avatar -->
+        <div class="banner">
+            <img src="banner.jpg" alt="Bannière" class="banner-img">
+            <div class="avatar">
+                <img id="profileImage" src="avatar.jpg" alt="Avatar">
+                <input type="file" id="profileImageInput" accept="image/*" style="display: none;">
+                <button onclick="document.getElementById('profileImageInput').click()" class="edit-avatar-button">Changer</button>
+            </div>
+        </div>
+
+        <!-- Informations Utilisateur -->
+        <div class="user-info">
+            <h1>Nom d'Utilisateur</h1>
+            <p>Description courte | Localisation</p>
+            <button class="follow-button">Suivre</button>
+            <button class="message-button">Message</button>
+        </div>
+
+        <!-- Statistiques -->
+        <div class="stats">
+            <div>
+                <strong>200</strong><br>Abonnés
+            </div>
+            <div>
+                <strong>180</strong><br>Abonnements
+            </div>
+            <div>
+                <strong>50</strong><br>Publications
+            </div>
+        </div>
+
+        <!-- Formulaire pour créer une nouvelle publication -->
+        <div class="new-post">
+            <h2>Créer une nouvelle publication</h2>
+            <textarea id="postContent" placeholder="Exprimez-vous..."></textarea>
+            <input type="file" id="postImageInput" accept="image/*">
+            <button onclick="createPost()" class="post-button">Publier</button>
+            <div id="imagePreviewContainer" style="display: none;">
+                <img id="imagePreview" src="" alt="Aperçu de l'image" style="max-width: 100%; margin-top: 10px;">
+            </div>
+        </div>
+
+        <!-- Publications de l'utilisateur -->
+        <div class="posts" id="postsContainer">
+            <h2>Publications récentes</h2>
+        </div>
+        <div id="postsContainer">
+            <!-- Exemples de posts -->
+            <div class="post" data-post-id="1">
+                <div class="post-content">
+                    <p>Voici une publication exemple !</p>
+                </div>
+                <div class="post-actions">
+                    <span onclick="likePost(this)" class="like-icon">❤️</span>
+                    <span class="like-count">0</span>
+                    <span onclick="toggleCommentSection(this)" class="comment-icon">💬</span>
+                </div>
+                <div class="comment-section" style="display: none;">
+                    <input type="text" placeholder="Votre commentaire..." class="comment-input">
+                    <button onclick="addComment(this)">Publier</button>
+                    <div class="comments"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="profile.js"></script>
+    <script src="postActions.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Woody - Connexion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section">
+            <h1 class="logo">Woody</h1>
+            <p>Bienvenue sur Woody, le forum d'échange entre menuisiers. Partagez et restez en contact avec votre communauté.</p>
+        </div>
+
+        <div class="login-section">
+            <form id="loginForm">
+                <input type="text" id="email" placeholder="Adresse e-mail ou numéro de tél." required>
+                <input type="password" id="password" placeholder="Mot de passe" required>
+                <button type="submit" class="login-button">Se connecter</button>
+                <a href="forgot_password.html" class="forgot-password">Mot de passe oublié ?</a>
+                <hr>
+                <button type="button" class="create-account-button" onclick="window.location.href='register.html';">
+                    Créer nouveau compte
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Créer une Page pour un artisan, une entreprise ou un atelier.</p>
+    </footer>
+
+    <script src="login.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

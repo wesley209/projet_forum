@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Woody</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Woody</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Accueil</a></li>
+            <li><a href="profile.html">Profil</a></li>
+            <li><a href="#" onclick="logoutUser()">Déconnexion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <!-- Boîte de publication rapide -->
+        <section class="quick-post">
+            <h2>Créer une publication</h2>
+            <textarea id="postContent" placeholder="Qu'avez-vous à partager ?"></textarea>
+            <input type="file" id="postImage" accept="image/*">
+            <button onclick="createPost()">Publier</button>
+        </section>
+
+        <!-- Fil d'actualité -->
+        <section class="news-feed">
+            <h2>Fil d'actualité</h2>
+            <div class="post">
+                <div class="post-header">
+                    <img src="profile-pic.jpg" alt="Photo de profil" class="profile-pic">
+                    <div>
+                        <span class="username">menuisier1</span>
+                        <span class="date">Il y a 2 heures</span>
+                    </div>
+                </div>
+                <p>Voici un exemple de publication sur Woody !</p>
+                <img src="post-image.jpg" alt="Image de la publication" class="post-image">
+                <div class="post-actions">
+                    <span class="like-icon" onclick="toggleLike(this)">❤️</span>
+                    <span class="comment-icon" onclick="toggleComments(this)">💬</span>
+                    <span class="like-count">5 likes</span>
+                </div>
+                <div class="comments">
+                    <p><strong>menuisier2:</strong> Super publication !</p>
+                </div>
+                <textarea placeholder="Ajouter un commentaire..."></textarea>
+                <button onclick="addComment(this)">Commenter</button>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <form id="postForm">
+            <textarea id="postContent" placeholder="Exprimez-vous..."></textarea>
+            <button type="submit">Publier</button>
+        </form>
+
+        <div id="posts"></div> <!-- Section où les publications seront ajoutées -->
+    </div>
+
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Woody. Tous droits réservés. <a href="about.html">À propos</a> | <a href="contact.html">Contact</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
